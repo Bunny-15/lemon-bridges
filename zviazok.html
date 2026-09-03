@@ -48,46 +48,46 @@
 				<img src="abstrakcia.webp" alt="фон" class="abstrakcia-fon" loading="lazy">
 				<div class="gradient"></div>
 				<div class="conteiner-section">
-					<h1>Зв'яжіться з нами</h1>
+					<h1 data-i18n="zvizokzez">Зв'яжіться з нами</h1>
 					<section class="form-section">
 					  <form id="contactForm" action="send.php" method="POST" class="custom-form">
 
 						<div class="form-group">
-						  <label for="name">Ваше ім'я</label>
-						  <input type="text" id="name" name="name" required placeholder="як до вас звертатись?">
+						  <label for="name" data-i18n="names">Ваше ім'я</label>
+						  <input type="text" id="name" name="name">
 						</div>
 						
 						<div class="form-group">
-						  <label for="company">Назва компанії</label>
-						  <input type="text" id="company" name="company" required placeholder="Назва компанії">
+						  <label for="company" data-i18n="nazva">Назва компанії</label>
+						  <input type="text" id="company" name="company">
 						</div>
 						
 						<div class="form-group">
-						  <label for="email">Ваш Email</label>
+						  <label for="email" data-i18n="email">Ваш Email</label>
 						  <input type="email" id="email" name="email" required placeholder="example@gmail.com">
 						</div>
 						
 						<div class="form-group">
-						  <label for="phone">Телефон</label>
+						  <label for="phone" data-i18n="phones">Телефон</label>
 						  <input type="tel" id="phone" name="phone" required placeholder="+380">
 						</div>
 						
 						<div class="form-group">
-						  <label for="kW">Скільки кВт дозволена потужність на Вашому підприємстві/заводі?</label>
+						  <label for="kW" data-i18n="skilkykwtdozv">Скільки кВт дозволена потужність на Вашому підприємстві/заводі?</label>
 						  <input type="text" id="kW" name="kW" required placeholder="кВт">
 						</div>
 						
 						<div class="form-group">
-						  <label for="kWt">Скільки кВт з дозволеної потужності Ваше підприємство/завод споживає( максимальне пікове навантаження )?</label>
+						  <label for="kWt" data-i18n="skilkykwtdozvpotyz">Скільки кВт з дозволеної потужності Ваше підприємство/завод споживає( максимальне пікове навантаження )?</label>
 						  <input type="text" id="kWt" name="kWt" required placeholder="кВт">
 						</div>
 
 						<div class="form-group">
-						  <label for="message">Повідомлення</label>
+						  <label for="message" data-i18n="povidomlennia">Повідомлення</label>
 						  <textarea id="message" name="message" rows="4"  placeholder=" Напишіть ваше запитання...Не обов'язково"></textarea>
 						</div>
 
-						<button type="submit" id="submitBtn" class="submit-btn">Надіслати</button> 
+						<button type="submit" id="submitBtn" class="submit-btn" data-i18n="send">Надіслати</button> 
 						
 						<!-- Сюди JS виводитиме статус відправки -->
 						<div id="formStatus" class="form-status"></div>
