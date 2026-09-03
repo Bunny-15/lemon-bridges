@@ -1,0 +1,684 @@
+*{
+	padding:0px;
+	margin:0px;
+	box-sizing:border-box;
+	transition: background-color 0.4s ease, color 0.4s ease;
+}
+html, body{
+	width:100%;
+	max-width:100%;
+	overflow-x:hidden;
+}
+/*-- елементи для header --*/
+.navigation{
+	position:relative;
+	background-color:#e3ecef;
+	margin: 0 auto;
+	padding: 24px 40px;
+}
+
+.container{
+	margin:0 auto;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	max-width:1400px;
+}
+.left{
+	display: flex;
+	text-align: center;
+	flex-direction:column;
+	flex-shrink: 0;
+}
+.right{
+	display:flex;
+	align-items:center;
+	padding:0 10px 3.1px 40px;
+}
+a{
+	text-decoration: none;
+}
+.LB{
+	color:#253957;
+	text-decoration: none;
+	font-family: 'League Spartan';
+	font-weight: 600;
+	text-transform:uppercase;
+	margin:0;
+	padding:0;
+	line-height:1;
+}
+.logo-divider{
+	width:100%;
+	max-width:680px;
+	height:3.3px;
+	background-color:#F4D03F;
+	margin: 0 0 7px 0;
+	border-radius: 3px;
+}
+.bess{
+	font-family: 'League Spartan';
+	font-size:10px;
+	font-weight:500;
+	text-transform: uppercase;
+	margin:0;
+	padding:0;
+	letter-spacing:0.36em;
+	color:#1d2c45;
+	
+}
+.wi{
+	display: flex;
+    gap: 30px;
+}
+.my{
+	color:#253957;
+	text-transform:uppercase;
+	font-family: 'Inter';
+	font-size:14px;
+	font-weight:600;
+}
+.my:hover{
+	color:#239aa4;
+}
+.menu{
+	display:none;
+}
+.menu span{
+	display:block;
+	width:100%;
+	height:3px;
+	background-color:#253957;
+	border-radius:2px;
+	transition:transform 0.3s ease, opacity 0.3s ease;
+}
+/*-- масштабування для header --*/
+@media (max-width:1200px){
+	.navigation{
+		padding:24px 35px;
+	}
+}
+@media (max-width:992px){
+	.navigation{
+		padding:24px 30px;
+	}
+}
+@media (max-width:850px){
+	.navigation{
+		padding:24px 20px;
+	}
+	.menu{
+		display:flex;
+		flex-direction:column;
+		justify-content: space-between;
+		width:31px;
+		height:18px;
+		background:transparent;
+		border:none;
+		cursor:pointer;
+		padding:0 0 3.1px 7px;
+		z-index:100;
+	}
+	.menu span{
+		display:block;
+		width:100%;
+		height:3px;
+		background-color:#253957;
+		border-radius:2px;
+	}
+	.right{
+		position:absolute; 
+		top:100%;
+		left:0;
+		width:100%;
+		background-color:#F4F7F9;
+		max-height:0;
+		overflow:hidden;
+		transition:max-height 0.4s ease;
+		box-shadow:0 10px 15px rgba(0, 0, 0, 0.05);
+		z-index:99;
+		margin-left:0;
+		padding:0;
+	}
+	.wi{
+		flex-direction:column;
+		width:100%;
+		gap:0;
+	}
+	.my{
+		display:block;
+		border-bottom:1px solid rgba(0, 0, 0, 0.05);
+		width:100%;
+		box-sizing:border-box;
+	}
+	.right.active{
+		max-height:300px;
+	}
+	.menu.active span:nth-child(1){
+		transform:translateY(7.5px) rotate(45deg);
+	}
+	.menu.active span:nth-child(2){
+		opacity:0;
+	}
+	.menu.active span:nth-child(3){
+		transform:translateY(-7.5px) rotate(-45deg);
+	}
+	.LB{
+		font-size:29px;
+	}
+	.logo-divider{
+	width:100%;
+	max-width:680px;
+	height:2px;
+	background-color:#F4D03F;
+	margin: 0 0 5px 0;
+	border-radius: 3px;
+	}
+	.bess{
+	font-size:9px;
+	font-family: 'League Spartan';
+	font-weight:500;
+	text-transform: uppercase;
+	margin:0;
+	padding:0;
+	letter-spacing:0.36em;
+	color:#1d2c45;
+	}
+}
+@media (max-width:768px){
+	.LB{
+		font-size:29px;
+	}
+	.bess{
+		font-size:9px;
+	}
+	.wi{
+		flex-direction:column;
+		width:100%;
+		gap:0;
+	}
+	.my{
+		display:block;
+		padding:14px 20px;
+		border-bottom:1px solid rgba(0, 0, 0, 0.05);
+		width:100%;
+		box-sizing:border-box;
+	}
+	.right.active{
+		max-height:200px;
+	}
+}
+@media (max-width:668px){
+	.LB{
+		font-size:27px;
+	}
+	.bess{
+		font-size:8px;
+		letter-spacing:0.39em;
+	}
+	.right.active{
+		max-height:200px;
+	}
+}
+@media (max-width:500px){
+	.LB{
+		font-size:25px;
+	}
+	.bess{
+		font-size:7px;
+		letter-spacing:0.45em;
+	}
+}
+@media (max-width:480px){
+	.LB{
+		font-size:22px;
+	}
+	.logo-divider{
+	height:2px;
+	margin: 0 0 5px 0;
+	}
+	.bess{
+	font-size:6px;
+	letter-spacing:0.47em;
+	}
+	.menu{
+		height:15px;
+		padding:0 0 3.1px 7px;
+	}
+	.menu span{
+		height:2px;
+	}
+}
+@media (max-width:319px){
+	.LB{
+		font-size:18px;
+	}
+	.logo-divider{
+	height:2px;
+	margin: 0 0 5px 0;
+	}
+	.bess{
+	font-size:5px;
+	letter-spacing:0.45em;
+	}
+}
+/*-- //масштабування для header --*/
+/*-- кнопки ua/en --*/
+.lang-switch {
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+	margin-left: auto;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888888; 
+    padding: 2px 6px;
+	margin:0 0 3.1px 5px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+@media (max-width:768px){
+	.lang-switch{
+		margin-left:auto;
+		margin-right:10px;
+	}
+	.lang-btn{
+		padding:2px 4px;
+		font-size:12px;
+	}
+}
+@media (max-width:500px){
+	.lang-switch {
+		display: flex;
+		align-items: center;
+		font-family: sans-serif;
+		margin-left: auto;
+	}
+	.lang-btn {
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: #888888; 
+		padding: 2px 4px;
+		margin:0 0 3.1px 5px;
+		transition: color 0.2s ease, background-color 0.2s ease;
+	}
+}
+.lang-btn.active {
+    color:#253957;
+    background-color: #F4D03F;/* Лимонний акцент */
+    border-radius: 3px;
+} 
+/*-- //кнопки ua/en --*/
+/*-- //елементи для header --*/
+
+/*-- korobka1 --*/
+.korobka1{
+	display:flex;
+	width:100%;
+	background-color:#030b1a;
+	padding-top:30px;
+	overflow:hidden;
+}
+.max-width1400px{
+	display:flex;
+	max-width:1400px;
+	width:100%;
+	margin:0 auto;
+}
+.conteiner1{
+	display:flex;
+}
+.fon-text{
+	display:flex;
+	position:relative;
+	height:500px;
+	width:100%;
+	margin:30px 0;
+	overflow:hidden;
+}
+.photo-bridges-fon{
+	position:absolute;
+	object-position:center;
+	width:100%;
+	height:100%;
+	object-fit: cover;
+	top: 0;
+	left: 0;
+	z-index:2;
+	
+	/* Маска для Safari та WebKit-браузерів */
+    -webkit-mask-image: 
+        linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%),
+        linear-gradient(to bottom, transparent 0, black 40px, black calc(100% - 40px), transparent 100%);
+    -webkit-mask-composite: source-in;
+
+    /* Стандартна маска для сучасних браузерів */
+    mask-image: 
+        linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%),
+        linear-gradient(to bottom, transparent 0, black 70px, black calc(100% - 70px), transparent 100%);
+    mask-composite: intersect;
+}
+.gradient1{
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:3;
+	background: linear-gradient(106deg, #030b1ac5, #030b1adb, transparent, transparent);
+}
+.column-1{
+	display:flex;
+	flex-direction:column;
+	width:100%;
+	height:100%;
+}
+.max-width1000px{
+	display:flex;
+	max-width:1000px;
+	width:100%;
+	margin:0 auto;
+}
+.kl2{
+	display:flex;
+	width:100%;
+	height:100%;
+	padding:30px;
+	/* 1. Задаємо градієнт як фон */
+	background: linear-gradient(140deg, #2234aab5, #bbe6c0);
+
+	/* 2. Обрізаємо фон суто по формі букв */
+	-webkit-background-clip: text;
+	background-clip: text;
+
+	/* 3. Робимо сам текст прозорим, щоб проглядав фон */
+	-webkit-text-fill-color: transparent;
+}
+.d1-text h1{
+	font-weight: 600;
+	font-family:'Montserrat';
+	color:white;
+	font-size:clamp(24px, 4vw, 40px);
+	line-height:1;
+}
+.d2-text{
+	display:flex;
+	height:100%;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding:0 40px;
+}
+.d2-text h2{
+	color:#b3bac4;
+	font-weight: 600;
+	line-height:1;
+	font-family:'Montserrat';
+	font-size:clamp(20px, 4vw, 35px);
+}
+@media (max-width:367px){
+	.d2-text h2{
+		font-size:18px;
+	}
+}
+.kladovka1{
+	display:grid;
+}
+@media (min-width: 768px) {
+	.kladovka1 {
+	grid-template-columns: repeat(2, minmax(0, 1fr)); /* Від 768px: сітка 2x2 */
+	}
+}
+/*-- //korobka1 --*/
+/*-- korobka2 --*/
+.korobka2{
+	display:flex;
+	width:100%;
+	background-color:#030b1a;
+	overflow:hidden;
+}
+.conteiner2{
+	padding-bottom:50px;
+}
+.text{
+	display:flex;
+	font-family:'Montserrat';
+	color:#6d809a;
+	font-size:clamp(15px, 1.8vw, 23px);
+	font-weight: 600;
+	padding:0 40px;
+}
+.conteiner5 h3{
+	font-family:'Montserrat';
+	color:#b3bac4;
+	font-size:clamp(15px, 3.5vw, 30px);
+	font-weight: 600;
+	padding:30px 40px 20px;
+}
+@media (max-width:992px){
+	.conteiner2{
+		padding-bottom: clamp(0px, 1.8vw, 50px);
+	}
+}
+.conteiner3{
+	padding:10px 0;
+}
+/*-- //korobka2 --*/
+/*-- korobka4 --*/
+.korobka4{
+	width:100%;
+	display:flex;
+	background-color:#030b1a;
+	padding:40px 30px;
+}
+.kladovka4 p{
+	color:#bbd7ff;
+	font-family: 'Montserrat';
+	font-size: clamp(18px, 2vw, 30px);
+	align-items:center;
+}
+/*-- //korobka4 --*/
+/*-- korobka3 --*/
+.korobka3{
+	width:100%;
+	display:flex;
+	background-color:#030b1a;
+}
+.kladovka3{
+	max-width:1400px;
+	width:100%;
+	margin:0 auto;
+	padding:0 40px 20px;
+	display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.schema-foto{
+	height:800px;
+	display: grid;
+    place-items: center;
+	/* Маска для Safari та WebKit-браузерів */
+    -webkit-mask-image: 
+        linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%),
+        linear-gradient(to bottom, transparent 0, black 40px, black calc(100% - 40px), transparent 100%);
+    -webkit-mask-composite: source-in;
+
+    /* Стандартна маска для сучасних браузерів */
+    mask-image: 
+        linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%),
+        linear-gradient(to bottom, transparent 0, black 70px, black calc(100% - 70px), transparent 100%);
+    mask-composite: intersect;
+}
+@media (max-width:580px){
+	.schema-foto{
+		height:600px;
+	}
+}
+@media (max-width:400px){
+	.schema-foto{
+		height:400px;
+	}
+}
+.my-proponyjemo{
+	display:flex;
+	padding:30px;
+}
+.my-proponyjemo p{
+	font-size:18px;
+	font-size: clamp(17px, 1.8vw, 25px);
+	color:#bbd7ff;
+	font-family:'Montserrat';
+}
+/*-- //korobka3 --*/
+/*-- footer --*/
+hr{
+	border: none;
+	height:1px;
+	background-color:#02262c   ;
+}
+.ostatnia-korobka{
+	width:100%;
+	background-color:#000000;
+}
+.ostatniy-conteiner{
+	display:flex;
+	max-width:1400px;
+	justify-content:space-between;
+	margin:0 auto;
+	padding:30px 40px;
+}
+.cont{
+	display:flex;
+	padding:70px 0;
+	margin:0 10px;
+	flex:1;
+	color:white;
+	flex-direction: column;
+	
+}
+.d2{
+	font-family:'Montserrat';
+	line-height:3;
+	font-size:14px;
+	margin: 0 0 10px 0;
+	color:#b3bac4;
+}
+.material-symbols-outlined{
+	font-size:16px;
+}
+.kontacty ul {
+  list-style: none; /* 1. Прибирає крапки */
+  padding: 0;       /* 2. Прибирає стандартний відступ зліва */
+  margin: 0;        /* 3. Прибирає стандартні зовнішні відступи зверху і знизу */
+}
+.kontacty ul li {
+  font-family: 'Montserrat'; 
+  font-size: 14px; 
+  color:#747980;       
+}
+.kontacty li{
+	line-height:3;
+	align-items:center;
+	display:flex;
+	gap: 0.50rem;
+}
+.kontacty{
+	font-family:'Montserrat';
+	flex-direction: column;
+	display:flex;
+	width:100%;
+	height:100%;
+	color:#979da5;
+}
+.line{
+	max-width:1400px;
+	margin:0 auto;
+	border: none;
+	height: 0.1px;
+}
+.copyright{
+	display:flex;
+	max-width:1400px;
+	width:100%;
+	margin:0 auto;
+	align-items:center;
+	padding:35px;
+	color:#b3bac4;
+	font-family:'Montserrat';
+	font-size:13px;
+	justify-content:space-between;
+}
+.konfidencial{
+	display:flex;
+	margin-right:0;
+	font-family:'Montserrat';
+	font-size:13px;
+	color:#b3bac4;
+	height:100%;
+	align-items:center;
+}
+.kon-pidsvidka{
+	color:#747980;
+}
+.kon-pidsvidka:hover{
+	color:#f4d03f;
+}
+.column{
+	display:flex;
+	gap:0 30px;
+}
+@media (max-width:992px){
+	.cont{
+		padding:13px 0;
+	}
+	.d2{
+		font-size:11px;
+	}
+	.kontacty ul li {
+	font-family: 'Montserrat'; 
+	font-size: 10px; 
+	color:#747980;       
+	}
+	.copyright p{
+		font-size:10px;
+	}
+	.konfidencial{
+		font-size:10px;
+	}
+	.copyright{
+		padding:clamp(17px, 3vw, 35px);
+	}
+	svg{
+		height:16px;
+		width:16px;
+	}
+}
+@media (max-width: 768px){
+	.ostatniy-conteiner, .copyright, .column{
+		flex-direction: column;
+	}
+	.ostatniy-conteiner{
+		padding:20px 40px;
+	}
+	.cont{
+		padding:20px 0;
+	}
+	.cont{
+		padding:20px 0;
+	}
+	svg{
+		height:13px;
+		width:13px;
+	}
+}
+@media (max-width:668px){
+	.cont{
+		padding:12px 0;
+		margin:0;
+	}
+	.d2{
+		margin:0 0 5px;
+	}
+}
+/*-- //footer --*/
