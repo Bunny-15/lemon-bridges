@@ -167,43 +167,57 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-const form = document.getElementById('contactForm');
+
+ const form = document.getElementById('contactForm');
 const status = document.getElementById('formStatus');
 const submitBtn = document.getElementById('submitBtn');
 
-form.addEventListener('submit', async function (event) {
-  event.preventDefault();
+if (form) {
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
 
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Надсилання...';
-  status.textContent = '';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Надсилання...';
+    status.textContent = '';
 
-  const formData = new FormData(form);
+    const formData = new FormData(form);
 
-  try {
-    const response = await fetch('https://formspree.io/f/xbgjkgyo', {
-      method: 'POST',
-      body: formData
-    });
+    try {
+      const response = await fetch('https://formspree.io/f/xbgjkgyo', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json' // Обов'язково для роботи Formspree через fetch!
+        }
+      });
 
-    const result = await response.json();
-
-    if (response.ok) {
-      status.style.color = '#4cd137';
-      status.textContent = result.message;
-      form.reset();
-    } else {
+      if (response.ok) {
+        status.style.color = '#4cd137';
+        status.textContent = 'Дякуємо! Ваше повідомлення успішно надіслано.';
+        form.reset();
+      } else {
+        const result = await response.json();
+        status.style.color = '#e84118';
+        if (result.errors) {
+          status.textContent = result.errors.map(err => err.message).join(', ');
+        } else {
+          status.textContent = 'Виникла помилка під час надсилання форми.';
+        }
+      }
+    } catch (error) {
       status.style.color = '#e84118';
-      status.textContent = result.message;
+      status.textContent = 'Помилка з\'єднання з сервером.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Надіслати';
     }
-  } catch (error) {
-    status.style.color = '#e84118';
-    status.textContent = 'Помилка з\'єднання з сервером.';
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Надіслати';
-  }
-});
+  });
+}
+
+
+
+
+
 const messageTextarea = document.getElementById('message');
 
 if (messageTextarea) {
