@@ -181,7 +181,7 @@ form.addEventListener('submit', async function (event) {
   const formData = new FormData(form);
 
   try {
-    const response = await fetch('send.php', {
+    const response = await fetch('https://formspree.io/f/xbgjkgyo', {
       method: 'POST',
       body: formData
     });
@@ -214,3 +214,4 @@ if (messageTextarea) {
     this.style.height = this.scrollHeight + 'px';
   });
 }
+
