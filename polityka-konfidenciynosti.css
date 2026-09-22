@@ -353,6 +353,13 @@ a{
 	font-size: clamp(15px, 1.8vw, 23px);
 	font-family:'Montserrat';
 }
+.kladovka1 ul{
+	list-style:none;
+	color:#9ca5b2;
+	padding:10px;
+	font-size: clamp(15px, 1.8vw, 23px);
+	font-family:'Montserrat';
+}
 /*-- //korobka1 --*/
 
 /*-- footer --*/
