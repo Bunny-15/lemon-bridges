@@ -316,6 +316,13 @@ a{
 /*-- //елементи для header --*/
 
 /*-- korobka1 --*/
+ul{
+	list-style:none;
+	color:#9ca5b2;
+	padding:10px;
+	font-size: clamp(15px, 1.8vw, 23px);
+	font-family:'Montserrat';
+}
 .korobka1{
 	display:flex;
 	background: linear-gradient(353deg, #062932, #030b1a);
