@@ -208,7 +208,7 @@ a{
 		font-size:11px;
 	}
 	.right.active{
-		max-height:200px;
+		max-height:230px;
 	}
 }
 @media (max-width:668px){
@@ -220,7 +220,7 @@ a{
 		letter-spacing:0.39em;
 	}
 	.right.active{
-		max-height:200px;
+		max-height:240px;
 	}
 }
 @media (max-width:500px){
